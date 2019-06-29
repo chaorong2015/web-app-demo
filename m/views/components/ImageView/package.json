@@ -1,0 +1,24 @@
+{
+  "types": "index.d.ts",
+  "title": "图片",
+  "props": {
+    "url": {
+      "label": "图片",
+      "type": "image-link"
+    },
+    "mode": {
+      "label": "图片模式",
+      "type": "select",
+      "options": [
+        {
+          "label": "填充",
+          "value": "cover"
+        },
+        {
+          "label": "平铺",
+          "value": "contain"
+        }
+      ]
+    }
+  }
+}

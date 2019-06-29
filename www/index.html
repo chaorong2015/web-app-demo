@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src * gap: blob: file:; media-src * ; style-src 'self' 'unsafe-inline'; script-src 'self'
+        blob: 'unsafe-inline' 'unsafe-eval'; img-src * ;">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="renderer" content="webkit">
+  <!-- <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"> -->
+ <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="stylesheet" type="text/css" href="./js/app.css">
+  <style>
+    .startup_loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <!-- <base href="/m" /> -->
+  <title>肥猫旅游</title>
+  <script type="text/javascript">
+    // var apiUrl = 'http://192.168.2.189:5201';
+    // var apiUrl = 'http://127.0.0.1:5201';
+    var apiUrl = 'http://192.168.31.108:5201';
+    var remUnit = 0;
+    function setRemUnit() {
+      var doc = document.documentElement;
+      var width = doc.clientWidth;
+      remUnit = 100 * (width / 750);
+      doc.style.fontSize = remUnit + 'px';
+    };
+    window.addEventListener('resize', setRemUnit);
+    setRemUnit();
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <img class="startup_loading" src="./img/start_up.png">
+  </div>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <!-- <script type="text/javascript" src="cordova.js"></script> -->
+</body>
+
+</html>

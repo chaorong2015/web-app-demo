@@ -1,0 +1,3 @@
+[submodule "samoyed"]
+	path = samoyed
+	url = https://github.com/maichong/samoyed.git

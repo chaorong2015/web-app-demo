@@ -1,0 +1,54 @@
+{
+  "types": "index.d.ts",
+  "title": "按钮",
+  "props": {
+    "text": {
+      "label": "按钮文字"
+    },
+    "link": {
+      "label": "跳转链接"
+    },
+    "color": {
+      "label": "颜色",
+      "type": "select",
+      "options": [
+        {
+          "label": "primary",
+          "value": "primary"
+        },
+        {
+          "label": "secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "success",
+          "value": "success"
+        },
+        {
+          "label": "danger",
+          "value": "danger"
+        },
+        {
+          "label": "warning",
+          "value": "warning"
+        },
+        {
+          "label": "info",
+          "value": "info"
+        },
+        {
+          "label": "light",
+          "value": "light"
+        },
+        {
+          "label": "dark",
+          "value": "dark"
+        },
+        {
+          "label": "link",
+          "value": "link"
+        }
+      ]
+    }
+  }
+}

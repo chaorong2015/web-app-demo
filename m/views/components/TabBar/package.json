@@ -1,0 +1,7 @@
+{
+  "types": "index.d.ts",
+  "title": "标签栏",
+  "private": true,
+  "props": {
+  }
+}

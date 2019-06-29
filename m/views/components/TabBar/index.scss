@@ -1,0 +1,40 @@
+.tabbar {
+  $HEIGHT: 3rem;
+  height: $HEIGHT;
+
+  .tabbar-item {
+    height: $HEIGHT;
+    flex: 1;
+    border-top: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &.active {
+      background: #fafafa;
+      color: $primary;
+    }
+
+    .s-icon {
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0.4rem auto 0.2rem;
+    }
+
+    .s-text {
+      text-align: center;
+      font-size: 0.7rem;
+      line-height: 1em;
+    }
+
+    &.s-no-icon {
+      .s-text {
+        line-height: $HEIGHT;
+      }
+    }
+  }
+
+}

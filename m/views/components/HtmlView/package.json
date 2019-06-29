@@ -1,0 +1,10 @@
+{
+  "types": "index.d.ts",
+  "title": "富文本框",
+  "props": {
+    "html": {
+      "label": "富文本内容",
+      "type": "html"
+    }
+  }
+}
