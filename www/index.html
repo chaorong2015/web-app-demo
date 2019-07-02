@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Security-Policy" content="default-src * gap: blob: file:; media-src * ; style-src 'self' 'unsafe-inline'; script-src 'self'
+  <meta http-equiv="Content-Security-Policy" content="default-src * gap: blob: file:; media-src * ; style-src 'self' 'unsafe-inline'; script-src 'self' 
         blob: 'unsafe-inline' 'unsafe-eval'; img-src * ;">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="format-detection" content="telephone=no">
@@ -25,7 +25,7 @@
     }
   </style>
   <!-- <base href="/m" /> -->
-  <title>肥猫旅游</title>
+  <title>web-app-demo</title>
   <script type="text/javascript">
     // var apiUrl = 'http://192.168.2.189:5201';
     // var apiUrl = 'http://127.0.0.1:5201';
@@ -44,8 +44,11 @@
 
 <body>
   <div id="app">
+    startup_loading
     <img class="startup_loading" src="./img/start_up.png">
   </div>
+  <script src="./js/globals.min.js"></script>
+  <script type="text/javascript" src="./js/components.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <!-- <script type="text/javascript" src="cordova.js"></script> -->
 </body>

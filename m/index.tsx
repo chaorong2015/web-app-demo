@@ -5,7 +5,7 @@ import app from '@samoyed/app';
 import { Provider } from 'react-redux';
 import store from './redux';
 import App from './views/App';
-import '../scss/index.scss';
+import './scss/index.scss';
 
 app.init();
 

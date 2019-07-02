@@ -18,9 +18,10 @@ interface AppProps {
 interface AppState {
 }
 
-const history = H.createBrowserHistory({
+//创建history
+const history = H.createHashHistory({
   // @ts-ignore
-  basename: window.BASENAME || '/m'
+  // basename: window.BASENAME || '/m'
 });
 
 export interface Tab {
@@ -43,6 +44,10 @@ class App extends React.Component<AppProps, AppState> {
       });
       return <Route key={page.id} path={page.route} exact render={(props) => {
         let View: any = DynamicPage;
+        if (typeof (page.component) === 'function') {
+          View = page.component;
+          return React.createElement(View, Object.assign({ pageRecord: page, components }, props));
+        }
         if (page.component) {
           View = components[page.component];
           if (!View) return `Page component not found ${page.component}`;
@@ -66,10 +71,12 @@ class App extends React.Component<AppProps, AppState> {
     const pages: Page[] = [];
     const tabs: Page[] = [];
     // @ts-ignore
-    let homePage: Page = this.props.pages.list[0];
-    this.props.pages.list.forEach((p) => {
+    let homePage: Page = null;
+    this.props.pages.list && this.props.pages.list.forEach((p) => {
       // @ts-ignore
       if (p.route.startsWith('/index/')) {
+        // @ts-ignore
+        if (!homePage) homePage = p;
         // @ts-ignore
         tabs.push(p);
       } else {
@@ -82,6 +89,8 @@ class App extends React.Component<AppProps, AppState> {
       // @ts-ignore
       if (p.route.startsWith('/index/')) {
         // @ts-ignore
+        if (!homePage) homePage = p;
+        // @ts-ignore
         tabs.push(p);
       } else {
         // @ts-ignore
@@ -93,6 +102,10 @@ class App extends React.Component<AppProps, AppState> {
         {tabs.length ? this.renderTabs(tabs) : null}
         {pages.map((page) => <Route key={page.id} path={page.route} exact render={(props) => {
           let View: any = DynamicPage;
+          if (typeof (page.component) === 'function') {
+            View = page.component;
+            return React.createElement(View, Object.assign({ pageRecord: page, components }, props));
+          }
           if (page.component) {
             View = components[page.component];
             if (!View) return `Page component not found ${page.component}`;
@@ -110,7 +123,7 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <Router history={history}>
         <Viewport layout="fit">
-          {pages.map ? this.renderRoutes() : <div className="loading-page">Loading...</div>}
+          {(pages.map || PageList.length) ? this.renderRoutes() : <div className="loading-page">Loading...</div>}
         </Viewport>
       </Router>
     );
